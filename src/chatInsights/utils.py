@@ -1,9 +1,9 @@
 import re
 import pandas as pd
+from typing import Union, Match
 
 
-def _startsWithDateAndTime(s):
-    # pattern = '^([0-9]+)(\/)([0-9]+)(\/)([0-9][0-9]), ([0-9]+):([0-9][0-9]) (AM|PM) -'
+def _startsWithDateAndTime(s: str) ->  Union[Match[str], bool]:
     pattern = "^([0-9]+)(\/)([0-9]+)(\/)([0-9][0-9]), ([0-9]+):([0-9][0-9]) (am|pm) - "
 
     result = re.match(pattern, s)
@@ -12,7 +12,7 @@ def _startsWithDateAndTime(s):
     return False
 
 
-def _FindAuthor(s):
+def _FindAuthor(s: str) -> Union[Match[str], bool]:
     patterns = [
         "([\w]+):",  # First Name
         "([\w]+[\s]+[\w]+):",  # First Name + Last Name
@@ -36,7 +36,7 @@ def _FindAuthor(s):
     return False
 
 
-def _getDataPoint(line):
+def _getDataPoint(line: str) -> tuple:
     splitLine = line.split(" - ")
     dateTime = splitLine[0]
     date, time = dateTime.split(", ")
@@ -51,13 +51,18 @@ def _getDataPoint(line):
     return date, time, author, message
 
 
-def _processing(file_path):
+def _fetch(file_path: str) -> pd.DataFrame:
+    from datetime import datetime
+
+    URLPATTERN = r"(https?://\S+)"
+    MEDIAPATTERN = r"<Media omitted>"
+
     parsedData = []
 
     with open(file_path, "r", encoding="utf-8") as fp:
         fp.readline()
         fp.readline()
-        messageBuffer = []
+        messageBuffer: list[str] = []
 
         date, time, author = None, None, None
         while True:
@@ -81,4 +86,63 @@ def _processing(file_path):
             else:
                 messageBuffer.append(line)
 
-    return pd.DataFrame(parsedData, columns=["date", "time", "user", "message"])
+    df = pd.DataFrame(parsedData, columns=["date", "time", "user", "message"])
+
+    df = df.dropna()
+    df = df.reset_index(drop=True)
+    df["words"] = df["message"].apply(
+        lambda s: len(s.split(" "))
+    )  # Count number of word's in each message
+    df["date"] = pd.to_datetime(df["date"], format="%d/%m/%y")
+    df["media_count"] = (
+        df["message"].apply(lambda x: re.findall(MEDIAPATTERN, x)).str.len()
+    )
+    df["url_count"] = df["message"].apply(lambda x: re.findall(URLPATTERN, x)).str.len()
+
+    weeks = {
+        0: "Monday",
+        1: "Tuesday",
+        2: "Wednesday",
+        3: "Thrusday",
+        4: "Friday",
+        5: "Saturday",
+        6: "Sunday",
+    }
+    df["day"] = df["date"].dt.weekday.map(weeks)
+
+    # Converting 12 hour formate to 24 hour.
+    lst = []
+    for i in df["time"]:
+        out_time = datetime.strftime(datetime.strptime(i, "%I:%M %p"), "%H:%M")
+        lst.append(out_time)
+    df["24H_time"] = lst
+
+    df["hours"] = df["24H_time"].apply(lambda x: x.split(":")[0])
+
+    df["msg_count"] = df["date"].map(df["date"].value_counts().to_dict())
+
+    df["year"] = df["date"].dt.year
+
+    df["mon"] = df["date"].dt.month
+    months = {
+        1: "Jan",
+        2: "Feb",
+        3: "Mar",
+        4: "Apr",
+        5: "May",
+        6: "Jun",
+        7: "Jul",
+        8: "Aug",
+        9: "Sep",
+        10: "Oct",
+        11: "Nov",
+        12: "Dec",
+    }
+    df["month"] = df["mon"].map(months)
+    df.drop("mon", axis=1, inplace=True)
+    df["month_year"] = df.apply(lambda x: x["month"] + " " + str(x["year"]), axis=1)
+    df["msg_count_monthly"] = df["month_year"].map(
+        df["month_year"].value_counts().to_dict()
+    )
+
+    return df
