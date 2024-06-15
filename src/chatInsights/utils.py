@@ -3,8 +3,8 @@ import pandas as pd
 from typing import Union, Match
 
 
-def _startsWithDateAndTime(s: str) ->  Union[Match[str], bool]:
-    pattern = "^([0-9]+)(\/)([0-9]+)(\/)([0-9][0-9]), ([0-9]+):([0-9][0-9]) (am|pm) - "
+def _fetchDateAndTime(s: str) -> Union[Match[str], bool]:
+    pattern = r"^([0-9]+)(\/)([0-9]+)(\/)([0-9][0-9]), ([0-9]+):([0-9][0-9]) (am|pm) - "
 
     result = re.match(pattern, s)
     if result:
@@ -12,22 +12,24 @@ def _startsWithDateAndTime(s: str) ->  Union[Match[str], bool]:
     return False
 
 
-def _FindAuthor(s: str) -> Union[Match[str], bool]:
+def _findAuthor(s: str) -> Union[Match[str], bool]:
     patterns = [
-        "([\w]+):",  # First Name
-        "([\w]+[\s]+[\w]+):",  # First Name + Last Name
-        "([\w]+[\s]+[\w]+[\s]+[\w]+):",  # First Name + Middle Name + Last Name
-        "([+]\d{1} [(]\d{3}[)] \d{3}-\d{4}):",  # +1 (205) 962-9343
-        "([+]\d{2} \d{5} \d{5}):",  # Mobile Number (India no.)
-        "([+]\d{2} \d{3} \d{3} \d{4}):",  # Mobile Number (US no.)
-        "([+]\d{2} \d{2} \d{5}-\d{4}):",  # +55 11 99224-4030
-        "([+]\d{2} \d{4} \d{3} \d{3}):",  # +91 6370 376 940
-        "([+]\d{2} \d{4} \d{4}):",  # +65 8454 7719     +353 83 015 8907
-        "([+]\d{2} \d{3} \d{3} \d{3}):",
-        "([+]\d{2} \d{4} \d{6}):",
-        "([+]\d{3} \d{2} \d{3} \d{4}):",
-        "([+]\d{3} \d{3} \d{3} \d{4}):",  # +234 810 631 1539
-        "([\w]+)[\u263a-\U0001f999]+:",  # Name and Emoji
+        r"([\w\s]+):",  # any length name
+        # r"([\w]+):",  # first name
+        # r"([\w]+[\s]+[\w]+):",  # first name + last name
+        # r"([\w]+[\s]+[\w]+[\s]+[\w]+):",  # first name + middle mame + last name
+        r"([+]\d{1} [(]\d{3}[)] \d{3}-\d{4}):",  # +1 (205) 962-9343
+        r"([+]\d{2} \d{5} \d{5}):",  # mobile number (India no.)
+        r"([+]\d{2} \d{3} \d{3} \d{4}):",  # mobile number (US no.)
+        r"([+]\d{2} \d{2} \d{5}-\d{4}):",  # +55 11 99224-4030
+        r"([+]\d{2} \d{4} \d{3} \d{3}):",  # +91 6370 376 940
+        r"([+]\d{2} \d{4} \d{4}):",  # +65 8454 7719
+        r"([+]\d{2} \d{3} \d{3} \d{3}):",  # +34 543 678 231
+        r"([+]\d{2} \d{4} \d{6}):",  # +21 8549 254168
+        r"([+]\d{3} \d{2} \d{3} \d{4}):",  # +597 57 421 6849
+        r"([+]\d{3} \d{3} \d{3} \d{4}):",  # +234 810 631 1539
+        r"([\w\s]+)[\u263a-\U0001f999]+:",  # any length name and emoji
+        r"[\u263a-\U0001f999]+:",  # only emoji
     ]
     pattern = "^" + "|".join(patterns)
     result = re.match(pattern, s)
@@ -36,12 +38,12 @@ def _FindAuthor(s: str) -> Union[Match[str], bool]:
     return False
 
 
-def _getDataPoint(line: str) -> tuple:
+def _fetchMessages(line: str) -> tuple:
     splitLine = line.split(" - ")
     dateTime = splitLine[0]
     date, time = dateTime.split(", ")
     message = " ".join(splitLine[1:])
-    if _FindAuthor(message):
+    if _findAuthor(message):
         splitMessage = message.split(": ")
         author = splitMessage[0]
         message = " ".join(splitMessage[1:])
@@ -51,7 +53,7 @@ def _getDataPoint(line: str) -> tuple:
     return date, time, author, message
 
 
-def _fetch(file_path: str) -> pd.DataFrame:
+def _transformData(file_path: str) -> pd.DataFrame:
     from datetime import datetime
 
     URLPATTERN = r"(https?://\S+)"
@@ -61,7 +63,7 @@ def _fetch(file_path: str) -> pd.DataFrame:
 
     with open(file_path, "r", encoding="utf-8") as fp:
         fp.readline()
-        fp.readline()
+        # fp.readline()
         messageBuffer: list[str] = []
 
         date, time, author = None, None, None
@@ -70,7 +72,7 @@ def _fetch(file_path: str) -> pd.DataFrame:
             if not line:
                 break
             line = line.strip()
-            if _startsWithDateAndTime(line):
+            if _fetchDateAndTime(line):
                 if len(messageBuffer) > 0:
                     parsedData.append(
                         [
@@ -81,10 +83,19 @@ def _fetch(file_path: str) -> pd.DataFrame:
                         ]
                     )
                 messageBuffer.clear()
-                date, time, author, message = _getDataPoint(line)
+                date, time, author, message = _fetchMessages(line)
                 messageBuffer.append(message)
             else:
                 messageBuffer.append(line)
+
+        parsedData.append(
+            [
+                date,
+                time,
+                author,
+                re.sub(r"\s+", " ", " ".join(messageBuffer)),
+            ]
+        )
 
     df = pd.DataFrame(parsedData, columns=["date", "time", "user", "message"])
 
