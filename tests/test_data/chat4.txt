@@ -1,0 +1,47 @@
+17/08/22, 5:06 pm - ~ Vetrivel PS created group "🤩The HackWeekly 2.0🥳"
+08/11/23, 6:20 pm - +91 95974 43458: <Media omitted>
+08/11/23, 6:20 pm - +91 95974 43458: OpenAI 😅🤣
+08/11/23, 6:21 pm - +91 96208 88890: What ?? 😎
+17/08/22, 5:06 pm - You were added
+08/11/23, 6:22 pm - +91 95974 43458: It's said in the screenshot itself bro 😅
+08/11/23, 6:31 pm - +91 98198 59082: Damn. But this is so vague as a pricing tbhh. Will this cover model deployment and maintenance ? Also I find the pivot from building and deploying foundational models to designing boutique solutions quite interesting
+08/11/23, 6:34 pm - +91 95974 43458: No wonder, why new AI companies arise amidst openAI api access. The pricing uhhh 😨😒 startups and mid level companies can't think it off
+08/11/23, 6:38 pm - +91 96208 88890: Yes. Exclamation mark not question mark ! By mistake I put 🤣
+08/11/23, 6:39 pm - +91 96208 88890: For all that openAI has launched till now, do we have alternate also ? Be it models, APIs whatever
+08/11/23, 6:39 pm - +91 98198 59082: Honestly small cap companies don't make sense for open ai. They have an extremely expensive engineering team that's decorated enough to charge whatever they please. 
+
+Also Idts it will affect startups a lot. Startups can add a lot more value to an ecosystem apart from the models, like anything from good ui's to custom dsl's to guide APIs (refer normal computing)
+08/11/23, 6:41 pm - +91 95974 43458: Yes bro their target is companies with investor backup 😅
+08/11/23, 6:44 pm - +91 98316 13620: Healthcare industry is a joke
+08/11/23, 6:44 pm - +91 98316 13620: past 2 years  I have worked for some big names  and interacted with many
+08/11/23, 6:44 pm - +91 98316 13620: They dont want data to leak, but on the other hand they sell their own data
+08/11/23, 6:44 pm - +91 98316 13620: and especially the US medical system is corrupted to its core
+08/11/23, 6:45 pm - +91 98198 59082: More truer words haven't been spoken
+08/11/23, 6:46 pm - +91 95974 43458: Selling data is Data commissioning, bro. That's part of the business. Ur data is a lead to some industry.They might have mentioned in the agreement in smaller words 😅
+08/11/23, 6:48 pm - +91 98316 13620: not mine per say but their own patients, they sell it to insurance companies
+08/11/23, 6:48 pm - +91 98316 13620: so that they can leach
+08/11/23, 6:50 pm - +91 95974 43458: Yes bro, thats what I m saying. For insurance companies, the data is a lead. For giving that data, they offer money to the company.
+08/11/23, 6:51 pm - +91 95974 43458: In product companies, it happens a lot without users constent
+08/11/23, 7:19 pm - +91 96736 47641: Link to this info plz
+08/11/23, 7:22 pm - +91 87670 91009: Hello folks,
+Any azure user here??
+Need urgent help‼️
+08/11/23, 8:00 pm - +91 75359 47422: Can anyone suggest any use case regarding LLM what can be built?
+11/11/22, 1:03 pm - ~ Shankar Lal added +91 90353 56873
+08/11/23, 8:01 pm - +91 93548 41168: which sector
+08/11/23, 8:02 pm - +91 75359 47422: any sector will work just need few use cases
+08/11/23, 8:03 pm - +91 93548 41168: Use ai/LLM for analysing financial ratios from budget and answering questions, providing feedbacks
+08/11/23, 8:05 pm - +91 95974 43458: https://openai.com/form/custom-models
+08/11/23, 8:08 pm - +91 75359 47422: any blog to read on this part?
+08/11/23, 8:10 pm - +91 93548 41168: not sure. this one i thought when I was asked to find use cases 🥲rest chatgpt for the win.
+08/11/23, 8:10 pm - +91 93548 41168: infact it'll provide better answers
+08/11/23, 8:40 pm - +91 98198 59082: https://lilianweng.github.io/
+08/11/23, 8:40 pm - +91 98198 59082: Should give you some idea about what and how to build it
+08/11/23, 9:17 pm - +91 96869 66347: <Media omitted>
+08/11/23, 9:17 pm - +91 96869 66347: don't wish to diminish the achievements of OpenAI at all, GPT4 is a  modern marvel. However, some of the hype following the developer day is a bit out of hand. It's important to remain realistic on what we can achieve with tools.
+08/11/23, 10:13 pm - +91 90803 38368: https://youtube.com/shorts/Mklo1Y4Txas?si=zq7NxNXv6vXOyiE_
+08/11/23, 10:47 pm - +91 98316 13620: What is this RAG thing thats going around
+08/11/23, 10:48 pm - +91 98316 13620: can someone explain, I have been too deep into a kaggle comp to understand what this is
+08/11/23, 10:48 pm - +91 98316 13620: any short description or a link to some resources would be good
+08/11/23, 10:50 pm - +91 93548 41168: https://youtu.be/T-D1OfcDW1M?feature=shared
+08/11/23, 11:26 pm - +91 96009 63961: Guys I need some inputs on one use case. 
