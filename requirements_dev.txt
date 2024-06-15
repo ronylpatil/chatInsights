@@ -5,6 +5,7 @@ flake8==7.0.0
 black==24.4.2
 mypy==1.10.0
 -e .   # local package
+pandas==2.2.2
 pandas-stubs==2.2.2.240603
 
 # cmd: pipreqs . --savepath custom_requirements.txt
