@@ -9,4 +9,5 @@ matplotlib-stubs==0.2.0
 ensure==1.0.4
 wordcloud==1.9.3
 nltk==3.8.1
+ensure==1.0.4
 # cmd: pipreqs . --savepath custom_requirements.txt
