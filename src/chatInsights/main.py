@@ -1,3 +1,4 @@
+import nltk  # type: ignore
 import matplotlib.pyplot as plt
 from chatInsights import _transformData
 from wordcloud import WordCloud  # type: ignore
@@ -123,6 +124,8 @@ class ChatInsights:
         plt.show()
 
     def word_cloud(self, save_figure: str = "N") -> None:
+        nltk.download("stopwords")
+
         def _preprocess_text(df):
             hindi = [chr(c) for c in range(0x0900, 0x097F)]
             temp = df[
