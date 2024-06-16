@@ -13,8 +13,8 @@
 .. image:: https://github.com/ronylpatil/chatInsights/actions/workflows/ci_pipeline.yaml/badge.svg
     :target: https://github.com/ronylpatil/chatInsights/actions?query=workflow%3Atest
 
-.. image:: https://github.com/ronylpatil/chatInsights/actions/workflows/cd_pipeline.yml/badge.svg
-    :target: https://github.com/ronylpatil/test_package/actions?query=workflow%3Atest
+.. image:: https://github.com/ronylpatil/chatInsights/actions/workflows/cd_pipeline.yaml/badge.svg
+    :target: https://github.com/ronylpatil/chatInsights/actions?query=workflow%3Atest
 
 
 The ``chatInsights`` - WhatsApp Group Chat Analysis Python Package.
