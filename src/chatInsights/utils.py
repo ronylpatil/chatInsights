@@ -1,5 +1,6 @@
 import re
 import pandas as pd
+from ensure import ensure_annotations  # type: ignore
 from typing import Union, Match
 
 
@@ -53,6 +54,7 @@ def _fetchMessages(line: str) -> tuple:
     return date, time, author, message
 
 
+@ensure_annotations
 def _transformData(file_path: str) -> pd.DataFrame:
     from datetime import datetime
 
