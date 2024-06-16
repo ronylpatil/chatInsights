@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 with open("README.rst", "r", encoding="utf-8") as f:
     long_description = f.read()
     
-__version__ = "0.0.1a1"
+__version__ = "0.0.1a2"
 REPO_NAME = "chatInsights"
 AUTHOR = "ronilpatil"
 AUTHOR_EMAIL = "ronylpatil@gmail.com"
@@ -16,7 +16,7 @@ setup(
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     description=("whatsapp group chat analysis python package"),
-    keywords=["chat analysis", "visualization", "whatsapp chat"],
+    keywords=["chat analysis", "statistical analysis", "eda"],
     long_description=long_description,
     long_description_content="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
