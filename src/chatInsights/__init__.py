@@ -4,3 +4,5 @@ from chatInsights.utils import (
     _findAuthor,
     _transformData,
 )
+
+from chatInsights.main import ChatInsights
