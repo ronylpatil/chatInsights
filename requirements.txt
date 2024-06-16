@@ -4,5 +4,8 @@
 # requirements
 pandas==2.2.2
 pandas-stubs==2.2.2.240603
-
+matplotlib==3.9.0
+ensure==1.0.4
+wordcloud==1.9.3
+nltk==3.8.1
 # cmd: pipreqs . --savepath custom_requirements.txt
