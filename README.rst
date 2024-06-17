@@ -54,9 +54,7 @@ A simple code example:
       - .. image:: doc/en/wordcloud.png
           :width: 330px
           :height: 190px
-      - .. image::
-          :width:
-          :height:
+      - 
 
 Features
 --------
@@ -68,7 +66,6 @@ Features
 
 Documentation
 -------------
-.. For full documentation, including installation, tutorials and PDF documents, please see medium blog.
 Updated soon.
 
 Bugs/Requests
