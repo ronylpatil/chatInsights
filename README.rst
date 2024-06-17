@@ -36,7 +36,6 @@ A simple code example:
        obj.word_cloud()
 
 
-
 .. list-table::
     :widths: 33 33 33
     :header-rows: 0
@@ -56,7 +55,7 @@ A simple code example:
       - .. image:: doc/en/wordcloud.png
           :width: 330px
           :height: 190px
-      - 
+      -
 
 
 
