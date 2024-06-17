@@ -6,7 +6,7 @@
 
 
 .. image:: https://img.shields.io/pypi/v/chatInsights.svg
-    :target: https://pypi.org/project/chatInsights/ 
+    :target: https://pypi.org/project/chatInsights/
 
 .. image:: https://img.shields.io/pypi/pyversions/chatInsights.svg
     :target: https://pypi.org/project/chatInsights/
