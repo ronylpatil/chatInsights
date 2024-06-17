@@ -6,7 +6,7 @@
 
 
 .. image:: https://img.shields.io/pypi/v/chatInsights.svg
-    :target: https://pypi.org/project/chatInsights/
+    :target: https://pypi.org/project/chatInsights/ 
 
 .. image:: https://img.shields.io/pypi/pyversions/chatInsights.svg
     :target: https://pypi.org/project/chatInsights/
@@ -40,24 +40,22 @@ A simple code example:
     :widths: 33 33 33
     :header-rows: 0
 
-    * - .. image:: doc/en/active_users.png
+    * - .. image:: https://raw.githubusercontent.com/ronylpatil/chatInsights/main/doc/en/active_users.png
           :width: 330px
           :height: 190px
-      - .. image:: doc/en/active_year.png
+      - .. image:: https://raw.githubusercontent.com/ronylpatil/chatInsights/main/doc/en/active_year.png
           :width: 330px
           :height: 190px
-      - .. image:: doc/en/active_month.png
+      - .. image:: https://raw.githubusercontent.com/ronylpatil/chatInsights/main/doc/en/active_month.png
           :width: 330px
           :height: 190px
-    * - .. image:: doc/en/active_day.png
+    * - .. image:: https://raw.githubusercontent.com/ronylpatil/chatInsights/main/doc/en/active_day.png
           :width: 330px
           :height: 190px
-      - .. image:: doc/en/wordcloud.png
+      - .. image:: https://raw.githubusercontent.com/ronylpatil/chatInsights/main/doc/en/wordcloud.png
           :width: 330px
           :height: 190px
       -
-
-
 
 
 Features
@@ -84,7 +82,7 @@ Please use the `GitHub issue tracker <https://github.com/ronylpatil/chatInsights
 Changelog
 ---------
 
-Consult the `Changelog <add changelog link here>`__ page for fixes and enhancements of each version.
+Consult the `Changelog <https://github.com/ronylpatil/chatInsights/releases>`__ page for fixes and enhancements of each version.
 
 
 License
@@ -93,4 +91,4 @@ License
 Distributed under the terms of the `MIT`_ license.
 
 
-.. _`MIT`: https://github.com/ronylpatil/chatInsights/LICENSE
+.. _`MIT`: https://raw.githubusercontent.com/ronylpatil/chatInsights/main/LICENSE
