@@ -17,36 +17,57 @@
     :target: https://github.com/ronylpatil/chatInsights/actions?query=workflow%3Atest
 
 
-The ``chatInsights`` package make it easy to perform whatsApp group chat analysis.
+The ``chatInsights`` package make it easy to perform whatsApp group chat analysis using python.
 
 A simple code example:
 
 .. code-block:: python
-    
-    # import chatInsights class
-    from chatInsights import ChatInsights
-    
-    # create obj of ChatInsights class
-    obj = ChatInsights(r'E:/chat.txt')
-    obj.active_users()
-    obj.active_year()
-    obj.active_month()
-    obj.active_day()
-    obj.word_cloud()
 
-Add basic info here.
+       # import chatInsights class
+       from chatInsights import ChatInsights
+       
+       # create obj of ChatInsights class
+       obj = ChatInsights(r'E:/chat.txt')
+       obj.active_users()
+       obj.active_year()
+       obj.active_month()
+       obj.active_day()
+       obj.word_cloud()
 
+
+.. list-table::
+    :widths: 33 33 33
+    :header-rows: 0
+
+    * - .. image:: doc/en/active_users.png
+          :width: 330px
+          :height: 190px
+      - .. image:: doc/en/active_year.png
+          :width: 330px
+          :height: 190px
+      - .. image:: doc/en/active_month.png
+          :width: 330px
+          :height: 190px
+    * - .. image:: doc/en/active_day.png
+          :width: 330px
+          :height: 190px
+      - .. image:: doc/en/wordcloud.png
+          :width: 330px
+          :height: 190px
+      - 
 
 Features
 --------
-- Feature_1
-- Feature_2
-- Feature_3
-- Feature_4
+- User activity stats
+- Weekly message stats
+- Monthly message stats
+- Yearly message stats
+- Word Cloud
 
 Documentation
 -------------
-For full documentation, including installation, tutorials and PDF documents, please see medium blog.
+.. For full documentation, including installation, tutorials and PDF documents, please see medium blog.
+Updated soon.
 
 Bugs/Requests
 -------------
