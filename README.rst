@@ -1,7 +1,8 @@
+
 .. image:: https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg
-   :align: center
-   :height: 200
-   :alt: logo  
+    :align: center
+    :height: 200
+    :alt: logo  
 
 
 .. image:: https://img.shields.io/pypi/v/chatInsights.svg

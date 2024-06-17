@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 with open("README.rst", "r", encoding="utf-8") as f:
     long_description = f.read()
 
-__version__ = "0.0.1a8"
+__version__ = "0.0.1a9"
 REPO_NAME = "chatInsights"
 AUTHOR = "ronilpatil"
 AUTHOR_EMAIL = "ronylpatil@gmail.com"
