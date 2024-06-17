@@ -1,9 +1,9 @@
-
 .. image:: https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg
    :align: center
    :height: 200
    :alt: logo  
-  
+
+
 .. image:: https://img.shields.io/pypi/v/chatInsights.svg
     :target: https://pypi.org/project/chatInsights/
 
@@ -35,6 +35,7 @@ A simple code example:
        obj.word_cloud()
 
 
+
 .. list-table::
     :widths: 33 33 33
     :header-rows: 0
@@ -57,6 +58,8 @@ A simple code example:
       - 
 
 
+
+
 Features
 --------
 - User activity stats
@@ -68,21 +71,25 @@ Features
 
 Documentation
 -------------
+
 Updated soon.
 
 
 Bugs/Requests
 -------------
+
 Please use the `GitHub issue tracker <https://github.com/ronylpatil/chatInsights/issues>`_ to submit bugs or request features.
 
 
 Changelog
 ---------
+
 Consult the `Changelog <add changelog link here>`__ page for fixes and enhancements of each version.
 
 
 License
 -------
+
 Distributed under the terms of the `MIT`_ license.
 
 
