@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 with open("README.rst", "r", encoding="utf-8") as f:
     long_description = f.read()
 
-__version__ = "0.0.1a14"
+__version__ = "0.0.2"
 REPO_NAME = "chatInsights"
 AUTHOR = "ronilpatil"
 AUTHOR_EMAIL = "ronylpatil@gmail.com"
@@ -21,7 +21,7 @@ setup(
     long_description_content="text/markdown",
     url=f"https://github.com/{AUTHOR_USER_NAME}/{REPO_NAME}",
     classifiers=[
-        "Development Status :: 3 - Alpha",
+        "Development Status :: 4 - Beta",
         "License :: OSI Approved :: MIT License",
         "Operating System :: MacOS",
         "Operating System :: Microsoft :: Windows",
