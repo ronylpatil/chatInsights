@@ -56,6 +56,7 @@ A simple code example:
           :height: 190px
       - 
 
+
 Features
 --------
 - User activity stats
@@ -64,20 +65,25 @@ Features
 - Yearly message stats
 - Word Cloud
 
+
 Documentation
 -------------
 Updated soon.
+
 
 Bugs/Requests
 -------------
 Please use the `GitHub issue tracker <https://github.com/ronylpatil/chatInsights/issues>`_ to submit bugs or request features.
 
+
 Changelog
 ---------
 Consult the `Changelog <add changelog link here>`__ page for fixes and enhancements of each version.
 
+
 License
 -------
 Distributed under the terms of the `MIT`_ license.
+
 
 .. _`MIT`: https://github.com/ronylpatil/chatInsights/LICENSE
