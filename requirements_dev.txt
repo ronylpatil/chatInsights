@@ -5,6 +5,7 @@ flake8==7.0.0
 black==24.4.2
 mypy==1.10.0
 docutils==0.21.2
+ensure==1.0.4
 
 -r requirements.txt
 
