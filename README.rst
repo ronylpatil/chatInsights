@@ -54,7 +54,9 @@ A simple code example:
       - .. image:: doc/en/wordcloud.png
           :width: 330px
           :height: 190px
-
+      - .. image::
+          :width:
+          :height:
 
 Features
 --------
