@@ -11,6 +11,22 @@ class ChatInsights:
         self.data = _transformData(self.file_path)
 
     def active_users(self, save_figure: str = "N") -> None:
+        """
+        Generate a bar chart of the most active users in the group.
+
+        Parameters:
+        -----------
+        save_figure : str, optional
+            Specifies whether to save the figure or not. 
+            "Y" to save the figure, "N" to not save. 
+            Default is "N".
+
+        Returns:
+        --------
+        None
+        """
+        
+        # function implementation
         plt.figure(figsize=(8, 4))
         m_a = self.data["user"].value_counts().head(10).sort_values()
         m_a.plot.barh(
@@ -41,6 +57,22 @@ class ChatInsights:
         plt.show()
 
     def active_day(self, save_figure: str = "N") -> None:
+        """
+        Generate a bar chart show users activity day-wise..
+
+        Parameters:
+        -----------
+        save_figure : str, optional
+            Specifies whether to save the figure or not. 
+            "Y" to save the figure, "N" to not save. 
+            Default is "N".
+
+        Returns:
+        --------
+        None
+        """
+        
+        # function implementation
         plt.figure(figsize=(7, 3))
         a_d = self.data["day"].value_counts().head(10).sort_values()
         a_d.plot.barh(
@@ -68,6 +100,22 @@ class ChatInsights:
         plt.show()
 
     def active_month(self, save_figure: str = "N") -> None:
+        """
+        Generate a bar chart show users activity month-wise.
+
+        Parameters:
+        -----------
+        save_figure : str, optional
+            Specifies whether to save the figure or not. 
+            "Y" to save the figure, "N" to not save. 
+            Default is "N".
+
+        Returns:
+        --------
+        None
+        """
+        
+        # function implementation
         plt.figure(figsize=(8, 4))
         a_m = self.data["month_year"].value_counts().sort_values()[:10]
         a_m.plot.barh(
@@ -98,6 +146,22 @@ class ChatInsights:
         plt.show()
 
     def active_year(self, save_figure: str = "N") -> None:
+        """
+        Generate a bar chart show users activity year-wise.
+
+        Parameters:
+        -----------
+        save_figure : str, optional
+            Specifies whether to save the figure or not. 
+            "Y" to save the figure, "N" to not save. 
+            Default is "N".
+
+        Returns:
+        --------
+        None
+        """
+        
+        # function implementation
         df = self.data["year"].value_counts().to_frame().reset_index()
         plt.figure(figsize=(6, 4))
         bars = plt.bar(df["year"], df["count"], color=["#ffff00", "#ff0000", "#ac25e2"])
@@ -124,6 +188,22 @@ class ChatInsights:
         plt.show()
 
     def word_cloud(self, save_figure: str = "N") -> None:
+        """
+        Generate a word cloud of chat.
+
+        Parameters:
+        -----------
+        save_figure : str, optional
+            Specifies whether to save the figure or not. 
+            "Y" to save the figure, "N" to not save. 
+            Default is "N".
+
+        Returns:
+        --------
+        None
+        """
+        
+        # function implementation
         nltk.download("stopwords")
 
         def _preprocess_text(df):
