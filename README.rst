@@ -17,20 +17,22 @@
     :target: https://github.com/ronylpatil/chatInsights/actions?query=workflow%3Atest
 
 
-The ``chatInsights`` - WhatsApp Group Chat Analysis Python Package.
+The ``chatInsights`` package make it easy to perform whatsApp group chat analysis.
 
 A simple code example:
 
 .. code-block:: python
-
-    # content of test_sample.py
-    # code should be automatically fetched
-
-To execute it::
-
-   # execution code here
-   
-   # code ends here
+    
+    # import chatInsights class
+    from chatInsights import ChatInsights
+    
+    # create obj of ChatInsights class
+    obj = ChatInsights(r'E:/chat.txt')
+    obj.active_users()
+    obj.active_year()
+    obj.active_month()
+    obj.active_day()
+    obj.word_cloud()
 
 Add basic info here.
 
