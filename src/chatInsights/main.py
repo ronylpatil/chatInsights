@@ -99,7 +99,7 @@ class ChatInsights:
         if save_figure == "Y" or save_figure == "y":
             plt.savefig("active_day.png", bbox_inches="tight")
         plt.show()
-            
+
     def active_month(self, save_figure: str = "N") -> None:
         """
         Generate a bar chart show users activity month-wise.
@@ -252,25 +252,27 @@ class ChatInsights:
             Specify the marker.
             Try out '.','o','*','^','<','>','p','P','h','H','X','x','+','1','2','3','4'
             Default is None.
-            
+
         Returns:
         --------
         None
         """
-        
+
         # function implementation
         plt.figure(figsize=(8, 4))
-        sns.lineplot(x = self.data["month_year"], y = self.data["msg_count_monthly"], marker = marker, color = 'red', linewidth = 1)
-        plt.xticks(rotation = 90)
+        sns.lineplot(
+            x=self.data["month_year"],
+            y=self.data["msg_count_monthly"],
+            marker=marker,
+            color="red",
+            linewidth=1,
+        )
+        plt.xticks(rotation=90)
         plt.xlabel("Months")
         plt.ylabel("No. of messages")
-        plt.title("Monthly Message Stats", fontdict = {"fontsize": 11})
-        plt.tight_layout(pad = 2)
+        plt.title("Monthly Message Stats", fontdict={"fontsize": 11})
+        plt.tight_layout(pad=2)
         if save_figure == "Y" or save_figure == "y":
             plt.savefig("timeseries.png")
 
         plt.show()
-
-
-
-
