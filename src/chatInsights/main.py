@@ -1,7 +1,6 @@
 import nltk  # type: ignore
 import seaborn as sns  # type: ignore
 import matplotlib.pyplot as plt
-from plotly import express as px # type: ignore
 from chatInsights import _transformData
 from wordcloud import WordCloud  # type: ignore
 from nltk.corpus import stopwords  # type: ignore
