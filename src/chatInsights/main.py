@@ -238,7 +238,7 @@ class ChatInsights:
         plt.tight_layout(pad=0)
         plt.show()
 
-    def timeseries_plot(self, save_figure: str = "N", marker: str = None) -> None:
+    def timeseries_plot(self, save_figure: str = "N", marker: str = "") -> None:
         """
         Generate a timeseries plot to show users activity month-wise.
 
